@@ -1,5 +1,6 @@
-# Agencia de Viajes Mayorista
-
+# Agencia de Viajes Mayorista ✈
+ <br> 
+ 
 ## Tematica del proyecto
 
 Nuestro equipo de desarrollo esta trabajando en un sistema de gestión de reservas para una agencia de viajes mayorista. Nuestro objetivo es diseñar una base de datos eficiente que pueda manejar todas las operaciones relacionadas con las reservas, de una manera óptima y eficiente.
@@ -90,6 +91,68 @@ La primary key de la tabla Viaje aparece como foreign key en las tablas Reserva 
 ### Columnas
 
 ![Captura de pantalla 2024-06-26 a la(s) 22 53 14](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/eb6542ad-46bb-4532-b8f2-f13242bcc377)
+
+
+## 1.5 Tabla Reserva_Hotel
+
+La tabla Reserva_Hotel es una tabla intermedia entre Reserva y Hotel.
+
+### Columnas
+
+![Captura de pantalla 2024-06-27 a la(s) 17 33 41](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/0c50fcb8-c6f3-4f91-8446-1e078f5be731)
+
+## 1.6 Tabla Hotel
+
+La tabla Hotel contiene la información relevante de los Hoteles.
+La primary key de la tabla Hotel aparece como foreign key en la tabla intermedia Reserva_Hotel
+
+### Columnas
+
+![Captura de pantalla 2024-06-27 a la(s) 17 26 00](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/c90ed26d-53f8-457a-80e0-4d9ae90f143c)
+
+## 1.7 Tabla Reserva_Vuelo
+
+La tabla Reserva_Vuelo es una tabla intermedia entre Reserva y Vuelo.
+
+
+### Columnas
+
+![Captura de pantalla 2024-06-27 a la(s) 17 26 26](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/afd700da-9141-4fb0-95b1-e18f1434a2be)
+
+## 1.8 Tabla Vuelo
+
+La tabla contiene información relevante de los vuelos.
+
+La primary key de la tabla Vuelo aparece como foreign key en la tabla intermedia Reserva_Vuelo.
+
+### Columnas
+
+![Captura de pantalla 2024-06-27 a la(s) 17 26 47](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/207a24a1-b90e-4ef2-9950-de117a5fca1b)
+
+## 1.9 Tabla Tour_Paquete
+
+La tabla contiene información sobre los distintos paquetes de tour que se pueden hacer en determinado destino.
+
+La primary key de la tabla Tour_Paquete aparece como foreign key en las tablas intermedias Cliente_Tour_Paquete y Tour_Paquete_Viaje.
+
+### Columnas
+
+![Captura de pantalla 2024-06-27 a la(s) 17 27 13](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/ffc402a2-3519-4286-8978-ec6d1e9fe9d9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
