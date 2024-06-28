@@ -16,6 +16,9 @@ Registro de inscripciones a Paquetes: Registra la inscripción de los clientes a
 ## Objetivo:
 Diseñar e implementar una base de datos relacional que satisfaga todas las necesidades de gestión de reservas para nuestra agencia de viajes. Esta base de datos deberá ser eficiente, escalable y fácil de mantener, permitiendo una gestión ágil y precisa de todas las operaciones relacionadas con las reservas y la oferta de paquetes turísticos.
 
+## Diagrama entidad relacion (DER)
+
+![DER_AgenciaViajes](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/2447c799-58d8-4059-af70-1332a849f285)
 
 ## Listado de Tablas
 
@@ -86,6 +89,7 @@ La primary key de la tabla Reserva aparece como foreign key en las tablas Reserv
 ## 1.4 Tabla Viaje
 
 La tabla Viaje representa un conjunto específico de servicios turísticos que la agencia de viajes organiza y ofrece.
+
 La primary key de la tabla Viaje aparece como foreign key en las tablas Reserva y Tour_Paquete_Viaje.
 
 ### Columnas
@@ -104,6 +108,7 @@ La tabla Reserva_Hotel es una tabla intermedia entre Reserva y Hotel.
 ## 1.6 Tabla Hotel
 
 La tabla Hotel contiene la información relevante de los Hoteles.
+
 La primary key de la tabla Hotel aparece como foreign key en la tabla intermedia Reserva_Hotel
 
 ### Columnas
