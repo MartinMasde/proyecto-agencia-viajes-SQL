@@ -1,1 +1,19 @@
+DROP DATABASE IF EXISTS agencia_viajes;
 
+CREATE DATABASE agencia_viajes;
+
+USE agencia_viajes;
+
+-- TABLAS DIMENSIONALES
+
+-- TABLA CLIENTE
+CREATE TABLE Cliente(
+      idCliente INT AUTO_INCREMENT,
+      Nombre VARCHAR(100),
+      Apellido VARCHAR(100),
+      Direccion VARCHAR(100),
+      Telefono  VARCHAR(20) NOT NULL,
+      Email VARCHAR(100) UNIQUE NOT NULL,
+      TipoCLiente VARCHAR(10) NOT NULL COMMENT "INDICA SI ES UN CLIENTE TIPO PERSONA O AGENCIA",
+  PRIMARY KEY (idCliente)
+);
