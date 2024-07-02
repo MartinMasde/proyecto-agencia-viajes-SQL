@@ -79,7 +79,6 @@ CREATE TABLE Vuelo (
 	PRIMARY KEY (idVuelo)
 );
 
--- TABLAS DE HECHO
 -- TABLA RESERVA
 CREATE TABLE Reserva (
 		idReserva INT AUTO_INCREMENT,
@@ -92,8 +91,30 @@ CREATE TABLE Reserva (
 );
 
 -- TABLA TOUR_PAQUETE
+CREATE TABLE Tour_Paquete (
+		idTourPaquete INT AUTO_INCREMENT,
+		Nombre VARCHAR(100),
+		Descripcion VARCHAR(250),
+		RechaReserva DATETIME,
+		Precio DECIMAL(10,2),
+	PRIMARY KEY (idTourPaquete)
+);
+
 -- TABLA CLIENTE_TOUR_PAQUETE
+CREATE TABLE Cliente_Tour_Paquete (
+		idClienteTourPaquete INT AUTO_INCREMENT,
+		idTourPaquete INT,
+		idCliente  INT,
+	PRIMARY KEY (idClienteTourPaquete)
+);
+
 -- TABLA TOUR_PAQUETE_VIAJE
+CREATE TABLE Tour_Paquete_viaje (
+		idTourPaqueteViaje INT AUTO_INCREMENT,
+		idTourPaquete INT,
+		idViaje INT,
+	PRIMARY KEY (idTourPaqueteViaje)
+);
 
 
 -- FOREIGN KEYS DEFINITION
@@ -112,5 +133,9 @@ ALTER TABLE Reserva_Vuelo  ADD CONSTRAINT fk_reserva_vuelo_reserva FOREIGN KEY (
 ALTER TABLE Reserva_Vuelo  ADD CONSTRAINT fk_reserva_vuelo_vuelo FOREIGN KEY (idVuelo) REFERENCES Vuelo (idVuelo);
 
 -- CLIENTE TOUR PAQUETE
+ALTER TABLE Cliente_Tour_Paquete ADD CONSTRAINT fk_Cliente_Tour_Paquete_Tour_Paquete FOREIGN KEY (idTourPaquete) REFERENCES Tour_Paquete (idTourPaquete);
+ALTER TABLE Cliente_Tour_Paquete ADD CONSTRAINT fk_Cliente_Tour_Paquete_Cliente FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente);
 
 -- TOUR PAQUETE VIAJE
+ALTER TABLE Tour_Paquete_Viaje ADD CONSTRAINT fk_Tour_Paquete_Viaje_Tour_Paquete FOREIGN KEY (idTourPaquete) REFERENCES Tour_Paquete (idTourPaquete);
+ALTER TABLE Tour_Paquete_Viaje ADD CONSTRAINT fk_Tour_Paquete_Viaje_Viaje FOREIGN KEY (idViaje) REFERENCES Viaje (idViaje);
