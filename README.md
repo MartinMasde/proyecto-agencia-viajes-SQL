@@ -19,7 +19,7 @@
 
 Nuestro equipo de desarrollo esta trabajando en un sistema de gestión de reservas para una agencia de viajes mayorista. Nuestro objetivo es diseñar una base de datos eficiente que pueda manejar todas las operaciones relacionadas con las reservas, de una manera óptima y eficiente.
 
-## Descripción del problema:
+## Modelo de negocio:
 
 **Gestión de Clientes y Empleados:** Necesitamos una base de datos que nos permita registrar la información de los clientes que realizan reservas en nuestra agencias, ya sea individuos o agencias de viaje. Ademas es esencial poder gestionar la información de los empleados involucrados en el proceso de reserva.
 
