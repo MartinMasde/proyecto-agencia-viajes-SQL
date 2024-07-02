@@ -1,3 +1,17 @@
+![agenciaimagen](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/e28e1bcc-9a59-4068-a63e-7fc5618a5949)
+
+
+# <center>Primera Entrega </center>
+
+@Alumno: Martin Mas de Ayala
+
+@Comision: #57190
+
+@Tutor: Ariel Annone
+
+@Docente: Anderson Michel Torres
+
+
 # Agencia de Viajes Mayorista ✈
  <br> 
  
@@ -7,18 +21,21 @@ Nuestro equipo de desarrollo esta trabajando en un sistema de gestión de reserv
 
 ## Descripción del problema:
 
-Gestión de Clientes y Empleados: Necesitamos una base de datos que nos permita registrar la información de los clientes que realizan reservas en nuestra agencias, ya sea individuos o agencias de viaje. Ademas es esencial poder gestionar la información de los empleados involucrados en el proceso de reserva.
-Gestión de Reservas: Necesitamos un sistema que pueda registrar cada reserva realizada, incluyendo la fecha y la hora de la reserva, el cliente que la realizo, el empleado encargado de dicha reserva y que viaje reservo.
-Gestión de Viajes y Paquetes Turísticos: Es importante poder clasificar y organizar los diferentes viajes y paquetes turísticos que ofrecemos, incluyendo detalles sobre, nombre, descripción, fechas y precio.
-Gestión de Proveedores y Servicios: La base de datos debe permitirnos registrar y gestionar la información de los proveedores de servicios turísticos, como aerolíneas y hoteles.
-Registro de inscripciones a Paquetes: Registra la inscripción de los clientes a los diferentes paquetes turísticos ofrecidos.
+**Gestión de Clientes y Empleados:** Necesitamos una base de datos que nos permita registrar la información de los clientes que realizan reservas en nuestra agencias, ya sea individuos o agencias de viaje. Ademas es esencial poder gestionar la información de los empleados involucrados en el proceso de reserva.
+
+**Gestión de Reservas:** Necesitamos un sistema que pueda registrar cada reserva realizada, incluyendo la fecha y la hora de la reserva, el cliente que la realizo, el empleado encargado de dicha reserva y que viaje reservo.
+
+**Gestión de Viajes y Paquetes Turísticos:** Es importante poder clasificar y organizar los diferentes viajes y paquetes turísticos que ofrecemos, incluyendo detalles sobre, nombre, descripción, fechas y precio.
+**Gestión de Proveedores y Servicios:** La base de datos debe permitirnos registrar y gestionar la información de los proveedores de servicios turísticos, como aerolíneas y hoteles.
+
+**Registro de inscripciones a Paquetes:** Registra la inscripción de los clientes a los diferentes paquetes turísticos ofrecidos.
 
 ## Objetivo:
 Diseñar e implementar una base de datos relacional que satisfaga todas las necesidades de gestión de reservas para nuestra agencia de viajes. Esta base de datos deberá ser eficiente, escalable y fácil de mantener, permitiendo una gestión ágil y precisa de todas las operaciones relacionadas con las reservas y la oferta de paquetes turísticos.
 
 ## Diagrama entidad relacion (DER)
 
-![DER_AgenciaViajes](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/2447c799-58d8-4059-af70-1332a849f285)
+![DERAgenciaViajes](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/08069573-26b5-4146-8ddd-8e1fc4580116)
 
 ## Listado de Tablas
 
@@ -59,7 +76,7 @@ La tabla Cliente se une a la tabla Tour_Paquete mediante la tabla Cliente_Tour_P
 
 ### Columnas
 
-![Captura de pantalla 2024-06-26 a la(s) 22 31 51](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/86cef600-538c-40fd-afec-b669a1d250e5)
+![Captura de pantalla 2024-07-01 a la(s) 19 26 52](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/3533b159-6569-43ec-8b1a-5ffb7f587027)
 
 
 ## 1.2 Tabla Empleado
@@ -70,8 +87,7 @@ La primary key de la tabla Empleado aparece como foreign key en la tabla Reserva
 
 ### Columnas
 
-![Captura de pantalla 2024-06-26 a la(s) 22 50 44](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/6cf17845-6e99-4fa6-96ae-34d0eb6a3d50)
-
+![Captura de pantalla 2024-07-01 a la(s) 19 27 35](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/1fa8930d-bb12-4eeb-9931-cbba888d719b)
 
 
 ## 1.3 Tabla Reserva
@@ -82,8 +98,7 @@ La primary key de la tabla Reserva aparece como foreign key en las tablas Reserv
 
 ### Columnas
 
-![Captura de pantalla 2024-06-26 a la(s) 22 51 48](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/17062a62-a90a-4a88-a6e9-a4d893680735)
-
+![Captura de pantalla 2024-07-01 a la(s) 19 28 19](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/43c31042-e2e7-4e69-a2ae-fdb620b080be)
 
 
 ## 1.4 Tabla Viaje
@@ -94,7 +109,7 @@ La primary key de la tabla Viaje aparece como foreign key en las tablas Reserva 
 
 ### Columnas
 
-![Captura de pantalla 2024-06-26 a la(s) 22 53 14](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/eb6542ad-46bb-4532-b8f2-f13242bcc377)
+![Captura de pantalla 2024-07-01 a la(s) 19 28 49](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/a57d12de-9305-4ce3-8186-97f16d5703cc)
 
 
 ## 1.5 Tabla Reserva_Hotel
@@ -103,7 +118,7 @@ La tabla Reserva_Hotel es una tabla intermedia entre Reserva y Hotel.
 
 ### Columnas
 
-![Captura de pantalla 2024-06-27 a la(s) 17 33 41](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/0c50fcb8-c6f3-4f91-8446-1e078f5be731)
+![Captura de pantalla 2024-07-01 a la(s) 19 29 29](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/f3750ad8-95dd-42a5-b784-d870095786ec)
 
 ## 1.6 Tabla Hotel
 
@@ -113,7 +128,7 @@ La primary key de la tabla Hotel aparece como foreign key en la tabla intermedia
 
 ### Columnas
 
-![Captura de pantalla 2024-06-27 a la(s) 17 26 00](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/c90ed26d-53f8-457a-80e0-4d9ae90f143c)
+![Captura de pantalla 2024-07-01 a la(s) 19 29 56](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/c0b76852-20d4-453d-91a9-0aa79fc69699)
 
 ## 1.7 Tabla Reserva_Vuelo
 
@@ -122,7 +137,7 @@ La tabla Reserva_Vuelo es una tabla intermedia entre Reserva y Vuelo.
 
 ### Columnas
 
-![Captura de pantalla 2024-06-27 a la(s) 17 26 26](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/afd700da-9141-4fb0-95b1-e18f1434a2be)
+![Captura de pantalla 2024-07-01 a la(s) 19 30 42](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/f54a0a63-5c46-484d-8850-f52a22743d34)
 
 ## 1.8 Tabla Vuelo
 
@@ -132,7 +147,8 @@ La primary key de la tabla Vuelo aparece como foreign key en la tabla intermedia
 
 ### Columnas
 
-![Captura de pantalla 2024-06-27 a la(s) 17 26 47](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/207a24a1-b90e-4ef2-9950-de117a5fca1b)
+![Captura de pantalla 2024-07-01 a la(s) 19 31 24](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/48afb241-8970-47eb-a29b-7291698efa6a)
+
 
 ## 1.9 Tabla Tour_Paquete
 
@@ -142,11 +158,23 @@ La primary key de la tabla Tour_Paquete aparece como foreign key en las tablas i
 
 ### Columnas
 
-![Captura de pantalla 2024-06-27 a la(s) 17 27 13](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/ffc402a2-3519-4286-8978-ec6d1e9fe9d9)
+![Captura de pantalla 2024-07-01 a la(s) 19 32 13](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/c8d635ce-3b85-4c5b-b14c-6c6cbe707622)
 
+## 1.10 Tabla Cliente_Tour_Paquete
 
+La tabla Cliente_Tour_Paquete es una tabla intermedia entre Cliente y Tour_Paquete
 
+### Columnas
 
+![Captura de pantalla 2024-07-01 a la(s) 19 59 50](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/ab236ce9-65e0-45d3-998a-aabd0bf5f140)
+
+## 1.11 Tabla Tour_Paquete_Viaje
+
+La tabla Tour_Paquete_Viaje es una tabla intermedia entre Viaje y Tour_Paquete
+
+### Columnas
+
+![Captura de pantalla 2024-07-01 a la(s) 20 01 16](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/fa641c38-fa01-40fc-bcd5-15386271c4f7)
 
 
 
