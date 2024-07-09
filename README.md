@@ -177,6 +177,17 @@ La tabla Tour_Paquete_Viaje es una tabla intermedia entre Viaje y Tour_Paquete
 ![Captura de pantalla 2024-07-01 a la(s) 20 01 16](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/fa641c38-fa01-40fc-bcd5-15386271c4f7)
 
 
+## Estructura e ingesta de datos
+
+
+## Objetos de la base de datos
+
+
+## Documentación de Vistas
+### Vista: ReservasPorFecha
+
+
+
 
 
 
