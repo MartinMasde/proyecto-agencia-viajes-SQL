@@ -337,8 +337,17 @@ VALUES
 ('Daniel, Schoen and Grady', '463 Green Ridge Terrace', '155-281-6035', '1305.37'),
 ('Stanton, Schowalter and Hamill', '4948 Menomonie Place', '199-744-7534', '960.23');
 
--- Reserva
 
+-- Viaje
+
+-- Reserva_Hotel
+-- Vuelo
+-- Reserva_Vuelo
+-- Tour_Paquete
+-- Cliente_Tour_Paquete
+-- Tour_Paquete_Viaje
+
+-- Reserva
 LOAD DATA LOCAL INFILE ''
 INTO TABLE Reserva  
 FIELDS TERMINATED BY ','
