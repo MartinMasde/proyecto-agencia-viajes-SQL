@@ -2,7 +2,7 @@ USE agencia_viajes;
 
 SET GLOBAL local_infile = true;
 
--- CLIENTE 100 records
+-- Cliente 100 records
 INSERT INTO Cliente
 (Nombre, Apellido, Direccion, Telefono, Email, TipoCliente)
 VALUES
@@ -347,10 +347,11 @@ VALUES
 -- Cliente_Tour_Paquete
 -- Tour_Paquete_Viaje
 
--- Reserva
-LOAD DATA LOCAL INFILE ''
+-- Reserva 200 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva.csv'
 INTO TABLE Reserva  
 FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (idReserva, FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
