@@ -355,11 +355,6 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (Aerolinea, NumeroVuelo, FechaSalida, FechaLlegada, Origen, Destino, Precio);
   
--- Reserva_Hotel
--- Reserva_Vuelo
--- Tour_Paquete
--- Cliente_Tour_Paquete
--- Tour_Paquete_Viaje
 
 -- Reserva 200 records
 LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva.csv'
@@ -369,5 +364,15 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
 
+-- Tour_Paquete 30 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Tour_Paquete.csv'
+INTO TABLE Tour_Paquete  
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(Nombre, Descripcion, FechaReserva, Precio);
 
-
+-- Reserva_Hotel
+-- Reserva_Vuelo
+-- Cliente_Tour_Paquete
+-- Tour_Paquete_Viaje
