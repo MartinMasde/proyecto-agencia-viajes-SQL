@@ -338,10 +338,24 @@ VALUES
 ('Stanton, Schowalter and Hamill', '4948 Menomonie Place', '199-744-7534', '960.23');
 
 
--- Viaje
+-- Viaje 150 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Viaje.csv'
+INTO TABLE Viaje  
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(Destino, FechaSalida, FechaRegreso, Descripcion, Precio);
 
+  
+-- Vuelo 200 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Vuelo.csv'
+INTO TABLE Vuelo 
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(Aerolinea, NumeroVuelo, FechaSalida, FechaLlegada, Origen, Destino, Precio);
+  
 -- Reserva_Hotel
--- Vuelo
 -- Reserva_Vuelo
 -- Tour_Paquete
 -- Cliente_Tour_Paquete
