@@ -351,10 +351,9 @@ VALUES
 LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva.csv'
 INTO TABLE Reserva  
 FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
-(idReserva, FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
+(FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
 
 
 
