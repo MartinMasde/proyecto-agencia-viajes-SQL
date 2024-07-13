@@ -367,11 +367,11 @@ VALUES
 (21, 141),
 (114, 133);
 
+
 -- INYECCION DE DATOS POR CONSOLA
 -- Al conectarme por terminal a el servidor
 -- debo agregarle al flag (parametro) --local-infile=1
 -- mysql -u root -p --host 127.0.0.1 --port 3306 --local-infile=1;
-
 
 -- Hotel 200 records
 LOAD DATA LOCAL INFILE '/structure/data-csv/Hotel.csv'
@@ -418,21 +418,20 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (Nombre, Descripcion, FechaReserva, Precio);
 
-
 -- Cliente_Tour_Paquete 50 records
-LOAD DATA LOCAL INFILE '/structure/data-csv/Tour_Paquete.csv'
-INTO TABLE Tour_Paquete  
+LOAD DATA LOCAL INFILE '/structure/data-csv/Cliente_Tour_Paquete.csv'
+INTO TABLE Cliente_Tour_Paquete  
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
-(Nombre, Descripcion, FechaReserva, Precio);
+(idTourPaquete, idCliente);
 
 -- Tour_Paquete_Viaje 50 records
-LOAD DATA LOCAL INFILE '/structure/data-csv/Tour_Paquete.csv'
-INTO TABLE Tour_Paquete  
+LOAD DATA LOCAL INFILE '/structure/data-csv/Tour_Paquete_Viaje.csv'
+INTO TABLE Tour_Paquete_Viaje  
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
-(Nombre, Descripcion, FechaReserva, Precio);
+(idTourPaquete, idViaje);
