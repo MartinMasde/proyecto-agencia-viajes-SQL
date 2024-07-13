@@ -184,7 +184,7 @@ La tabla Tour_Paquete_Viaje es una tabla intermedia entre Viaje y Tour_Paquete
 ## Objetos de la base de datos
 
 
-## Documentación de Vistas
+### Documentación de Vistas
 ### Vista: ReservasPorFecha
 
 
