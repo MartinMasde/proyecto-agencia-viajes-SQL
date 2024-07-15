@@ -185,7 +185,30 @@ La tabla Tour_Paquete_Viaje es una tabla intermedia entre Viaje y Tour_Paquete
 
 
 ### Documentación de Vistas
-### Vista: ReservasPorFecha
+### Vista: ReservasCliente
+
+**Descripción:** Esta vista muestra las reservas de viajes realizadas por un cliente en especifico, se muestran en orden ascendente por fecha de reserva.
+
+**Columnas:**
+
+* **NombreCompleto:** El nombre y el apellido del cliente
+* **Dirección:** La dirección del cliente
+* **Teléfono:** El número de teléfono del cliente
+* **Email:** La dirección de correo electrónico del cliente
+* **TipoCliente:** Si el cliente es una persona física o una agencia de viajes
+* **FechaReserva:** La fecha en que fue realizada la reserva
+* **Destino:** El destino de viaje elegido por el cliente
+* **FechaSalida:** La fecha en la que iniciará el viaje
+* **FechaRegreso:** La fecha en la que finalizará el viaje
+* **DescripcionViaje:** Una pequeña descripción del viaje elegido por el cliente
+* **Precio:** El importe en dolares del viaje
+
+**Ejemplo de consulta:**
+
+```sql
+SELECT * FROM ReservasCliente
+WHERE NombreCompleto = 'Xerxes Dukes';
+```
 
 
 
