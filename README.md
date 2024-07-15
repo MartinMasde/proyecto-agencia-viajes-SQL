@@ -15,7 +15,7 @@
 # Agencia de Viajes Mayorista ✈
  <br> 
  
-## Tematica del proyecto
+## Temática del proyecto
 
 Nuestro equipo de desarrollo esta trabajando en un sistema de gestión de reservas para una agencia de viajes mayorista. Nuestro objetivo es diseñar una base de datos eficiente que pueda manejar todas las operaciones relacionadas con las reservas, de una manera óptima y eficiente.
 
@@ -23,7 +23,7 @@ Nuestro equipo de desarrollo esta trabajando en un sistema de gestión de reserv
 
 **Gestión de Clientes y Empleados:** Necesitamos una base de datos que nos permita registrar la información de los clientes que realizan reservas en nuestra agencias, ya sea individuos o agencias de viaje. Ademas es esencial poder gestionar la información de los empleados involucrados en el proceso de reserva.
 
-**Gestión de Reservas:** Necesitamos un sistema que pueda registrar cada reserva realizada, incluyendo la fecha y la hora de la reserva, el cliente que la realizo, el empleado encargado de dicha reserva y que viaje reservo.
+**Gestión de Reservas:** Necesitamos un sistema que pueda registrar cada reserva realizada, incluyendo la fecha y la hora de la reserva, el cliente que la realizó, el empleado encargado de dicha reserva y que viaje reservó.
 
 **Gestión de Viajes y Paquetes Turísticos:** Es importante poder clasificar y organizar los diferentes viajes y paquetes turísticos que ofrecemos, incluyendo detalles sobre, nombre, descripción, fechas y precio.
 **Gestión de Proveedores y Servicios:** La base de datos debe permitirnos registrar y gestionar la información de los proveedores de servicios turísticos, como aerolíneas y hoteles.
@@ -33,7 +33,7 @@ Nuestro equipo de desarrollo esta trabajando en un sistema de gestión de reserv
 ## Objetivo:
 Diseñar e implementar una base de datos relacional que satisfaga todas las necesidades de gestión de reservas para nuestra agencia de viajes. Esta base de datos deberá ser eficiente, escalable y fácil de mantener, permitiendo una gestión ágil y precisa de todas las operaciones relacionadas con las reservas y la oferta de paquetes turísticos.
 
-## Diagrama entidad relacion (DER)
+## Diagrama entidad relación (DER)
 
 ![DERAgenciaViajes](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/08069573-26b5-4146-8ddd-8e1fc4580116)
 
@@ -210,8 +210,21 @@ SELECT * FROM ReservasCliente
 WHERE NombreCompleto = 'Xerxes Dukes';
 ```
 
+### Vista: DestinoConMasReservas
 
+**Descripción:** Esta vista mostrara los destinos de viaje con mas reservas realizadas.
 
+**Columnas:**
+
+* **Destino:** El destino del viaje
+* **TotalReservas:** La cantidad de reservas hechas
+
+**Ejemplo de consulta:**
+
+```sql
+SELECT * FROM DestinoConMasReservas
+ORDER BY TotalReservas ASC;
+```
 
 
 
