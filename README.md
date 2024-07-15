@@ -178,7 +178,7 @@ La tabla Tour_Paquete_Viaje es una tabla intermedia entre Viaje y Tour_Paquete
 
 
 ## Estructura e ingesta de datos
-* Se realiza principalemte por medio del archivo data_ingestion.sql
+* Se realiza principalmente por medio del archivo data_ingestion.sql
 * Las carga de las tablas: Reserva, Viaje, Hotel, Vuelo, Tour_Paquete, Cliente_Tour_Paquete y Tour_Paquete_Viaje se realizan por medio de sus archivos .csv respectivos, dichos archivos se encuentran en el directorio ./structure/data-csv
 
 ## Objetos de la base de datos
