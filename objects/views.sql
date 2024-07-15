@@ -34,6 +34,5 @@ FROM
 	Viaje V
 	JOIN Reserva R ON V.idViaje = R.idViaje
 GROUP BY 
-	V.Destino
-ORDER BY 
-	TotalReservas DESC;
+	V.Destino;
+
