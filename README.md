@@ -226,7 +226,13 @@ SELECT * FROM DestinoConMasReservas
 ORDER BY TotalReservas ASC;
 ```
 
+## Documentación de Funciones
 
+
+## Documentación de Triggers
+
+
+## Documentación de Procedimientos Almacenados
 
 
 
