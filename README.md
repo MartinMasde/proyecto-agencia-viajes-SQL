@@ -226,6 +226,24 @@ SELECT * FROM DestinoConMasReservas
 ORDER BY TotalReservas ASC;
 ```
 
+### Vista: CantidadReservasPorEmpleado
+
+**Descripción:** Esta vista mostrara la cantidad de reservas de viajes hechas por cada empleado.
+
+**Columnas:**
+
+* **Nombre:** El nombre del empleado que hizo la reserva 
+* **Email:** La dirección de correo electrónico del empleado
+* **TotalReservas:** La cantidad de reservas realizadas
+
+**Ejemplo de consulta:**
+
+```sql
+SELECT * FROM CantidadReservasPorEmpleado 
+ORDER BY TotalReservas DESC;
+```
+
+
 ## Documentación de Funciones
 
 
