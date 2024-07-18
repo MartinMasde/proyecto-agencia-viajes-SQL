@@ -36,3 +36,17 @@ FROM
 GROUP BY 
 	V.Destino;
 
+-- Vista cantidad Reservas hechas por los Empleados
+-- Esta vista mostrara el total de reservas hechas por cada empleado de la agencia
+CREATE VIEW 
+	CantidadReservasPorEmpleado AS
+SELECT
+	E.Nombre,
+	E.Email,
+	COUNT(R.idReserva) AS TotalReservas
+FROM
+	Empleado E
+	JOIN Reserva R On E.idEmpleado = R.idEmpleado
+GROUP BY 
+	E.Nombre, 
+	E.Email;
