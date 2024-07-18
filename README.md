@@ -246,6 +246,26 @@ ORDER BY TotalReservas DESC;
 
 ## Documentación de Funciones
 
+### Función: reservas_empleado_periodo
+
+**Descripción:** Esta función cuenta la cantidad de reservas de viajes realizada por un empleado en un intervalo de tiempo determinado.
+
+**Parámetros:**
+
+* **empleado_id:** Identificador único del empleado
+* **fecha_inicio:** Fecha de inicio del intervalo (formato YYYY-MM-DD)
+* **fecha_fin:** Fecha de fin del intervalo (formato YYYY-MM-DD)
+
+**Retorno:**
+
+* Número total de reservas realizadas por el empleado en el intervalo de tiempo especificado
+
+**Ejemplo de uso:**
+
+```sql
+SELECT reservas_empleado_periodo(1, '2024-01-01', '2024-03-31');
+```
+
 
 ## Documentación de Triggers
 
