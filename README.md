@@ -258,7 +258,7 @@ ORDER BY TotalReservas DESC;
 
 **Retorno:**
 
-* Número total de reservas realizadas por el empleado en el intervalo de tiempo especificado
+* Número total de reservas realizadas por el empleado en el intervalo de tiempo especificado.
 
 **Ejemplo de uso:**
 
@@ -266,6 +266,32 @@ ORDER BY TotalReservas DESC;
 SELECT reservas_empleado_periodo(1, '2024-01-01', '2024-03-31');
 ```
 
+### Función: CalcularPrecioConDescuento
+
+**Descripción:** Esta función dado un id de un Hotel y un intervalo de fechas en las que el huesped desea alojarse, calcula si son mas de 5 noches y aplica un descuento de 10% al precio por noche, en caso de ser menos de 5 noches se mantiene el precio original.
+
+**Parámetros:**
+
+* **Hotel_id:** Identificador único del Hotel
+* **FechaCheckIn:** Fecha de inicio de la estadia en el Hotel (formato YYYY-MM-DD)
+* **FechaCheckOut:** Fecha de fin de la estadia en el Hotel (formato YYYY-MM-DD)
+
+**Retorno:**
+
+* Nombre del Hotel, el precio original y el precio por noche con descuento si este correspondiera, de acuerdo a la cantidad de noches de hospedaje.
+
+**Ejemplo de uso:**
+
+```sql
+SELECT 
+    H.Nombre,
+    H.PrecioPorNoche,
+    CalcularPrecioConDescuento(H.idHotel, '2023-12-01', '2023-12-10') AS PrecioPorNocheConDescuento
+FROM 
+    Hotel H
+WHERE 
+    H.idHotel = 5;
+```
 
 ## Documentación de Triggers
 
