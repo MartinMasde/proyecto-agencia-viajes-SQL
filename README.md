@@ -1,7 +1,7 @@
 ![agenciaimagen](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/e28e1bcc-9a59-4068-a63e-7fc5618a5949)
 
 
-# <center>Primera Entrega </center>
+# <center>Segunda Entrega </center>
 
 @Alumno: Martin Mas de Ayala
 
@@ -293,10 +293,14 @@ WHERE
     H.idHotel = 5;
 ```
 
+
+## Documentación de Procedimientos Almacenados
+
+
 ## Documentación de Triggers
 
 
-## Documentación de Procedimientos Almacenados
+
 
 
 
