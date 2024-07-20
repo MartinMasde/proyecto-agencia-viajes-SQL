@@ -1,5 +1,9 @@
 USE agencia_viajes;
 
+DROP VIEW IF EXISTS ReservasCliente;
+DROP VIEW IF EXISTS DestinoConMasReservas;
+DROP VIEW IF EXISTS CantidadReservasPorEmpleado;
+
 -- Vista para mostrar las Reservas de Viajes de un Cliente
 -- Dado el nombre de un cliente se mostraran las reservas que dicho cliente tiene hechas ordenas por fechas de manera ascendente
 CREATE VIEW 
