@@ -296,6 +296,26 @@ WHERE
 
 ## Documentación de Procedimientos Almacenados
 
+### Procedimiento: sp_nueva_reserva
+
+**Descripción:** Este procedimiento crea una nueva reserva en la base de datos
+
+**Parámetros:**
+
+* **p_fechaViaje:** La fecha del viaje a realizar
+* **p_idCliente:** Identificador del cliente que hace la reserva
+* **p_idViaje:** Identificador del viaje que va a reservar
+* **p_idEmpleado:** Identificador del empleado encargado de hacer la reserva
+
+**Retorno:**
+
+* El ID de la reserva realizada con exito o un mensaje de error
+
+**Ejemplo de uso:**
+
+```sql
+CALL sp_nueva_reserva('2024-08-01', 30, 2, 4);
+```
 
 ## Documentación de Triggers
 
