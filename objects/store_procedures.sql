@@ -5,7 +5,6 @@ DROP PROCEDURE IF EXISTS sp_nueva_reserva;
 DELIMITER //
 
 CREATE PROCEDURE sp_nueva_reserva(
-	-- IN p_fechaReserva DATETIME,
     IN p_fechaViaje DATETIME,
     IN p_idCliente INT,
     IN p_idViaje INT,
