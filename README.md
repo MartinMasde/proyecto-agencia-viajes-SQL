@@ -94,7 +94,7 @@ La primary key de la tabla Empleado aparece como foreign key en la tabla Reserva
 
 La tabla Reserva contiene información de las reservas de viajes hechas por un cliente.
 
-La primary key de la tabla Reserva aparece como foreign key en las tablas Reserva_Vuelo y Reserva_Hotel
+La primary key de la tabla Reserva aparece como foreign key en las tablas Reserva_Vuelo y Reserva_Hotel.
 
 ### Columnas
 
@@ -124,7 +124,7 @@ La tabla Reserva_Hotel es una tabla intermedia entre Reserva y Hotel.
 
 La tabla Hotel contiene la información relevante de los Hoteles.
 
-La primary key de la tabla Hotel aparece como foreign key en la tabla intermedia Reserva_Hotel
+La primary key de la tabla Hotel aparece como foreign key en la tabla intermedia Reserva_Hotel.
 
 ### Columnas
 
@@ -185,6 +185,7 @@ La tabla Tour_Paquete_Viaje es una tabla intermedia entre Viaje y Tour_Paquete
 
 
 ### Documentación de Vistas
+
 ### Vista: ReservasCliente
 
 **Descripción:** Esta vista muestra las reservas de viajes realizadas por un cliente en especifico, se muestran en orden ascendente por fecha de reserva.
@@ -298,7 +299,7 @@ WHERE
 
 ### Procedimiento: sp_nueva_reserva
 
-**Descripción:** Este procedimiento crea una nueva reserva en la base de datos
+**Descripción:** Este procedimiento crea una nueva reserva en la base de datos.
 
 **Parámetros:**
 
@@ -309,7 +310,7 @@ WHERE
 
 **Retorno:**
 
-* El ID de la reserva realizada con exito o un mensaje de error
+* El ID de la reserva realizada con éxito o un mensaje de error.
 
 **Ejemplo de uso:**
 
@@ -317,13 +318,31 @@ WHERE
 CALL sp_nueva_reserva('2024-08-01', 30, 2, 4);
 ```
 
+### Procedimiento: sp_agregar_cliente
+
+**Descripción:** Este procedimiento agrega un nuevo cliente a la base de datos.
+
+**Parámetros:**
+
+* **p_Nombre:** El nombre del cliente
+* **p_Apellido:** El apellido del cliente
+* **p_Direccion:** La dirección del cliente
+* **p_Telefono:** El teléfono del cliente
+* **p_Email:** La dirección de correo electrónico del cliente
+* **p_TipoCliente:** Que tipo de cliente es, agencia o persona
+
+**Retorno:**
+
+* El ID del cliente agregado con éxito o un mensaje de error.
+
+**Ejemplo de uso:**
+
+```sql
+CALL sp_agregar_cliente ('Martin', 'Mas', 'Chucarro 1168', '777-777-7777', 'martin@email.com', 'Persona');
+```
+
+
 ## Documentación de Triggers
-
-
-
-
-
-
 
 
 
