@@ -13,7 +13,7 @@ DOCKER_COMPOSE_FILE=./docker-compose.yml
 DATABASE_CREATION=./structure/database_structure.sql
 DATABASE_POPULATION=./structure/data_ingestion.sql
 
-FILES=vistas funciones stored_procedures triggers
+FILES=views functions store_procedures triggers
 
 
 .PHONY: all up objects test-db access-db down
