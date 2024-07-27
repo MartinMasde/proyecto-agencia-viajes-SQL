@@ -1,19 +1,17 @@
-# Use root/example as user/password credentials
 version: '3.8'
 
 services:
-
-  db:
+  mysql:
     container_name: mysql
-    image: mysql:8.3.0
-    restart: always
+    image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       # - ./mysql:/var/lib/mysql
       - ./sql_project:/sql_project
     ports:
-      - "3309:3306"
+      - "3306:3306"
 
+    
 # COMANDOS PARA LEVANTARLO
 # docker compose up
