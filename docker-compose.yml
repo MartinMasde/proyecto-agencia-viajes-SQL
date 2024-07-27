@@ -10,7 +10,7 @@ services:
       # - ./mysql:/var/lib/mysql
       - ./sql_project:/sql_project
     ports:
-      - "3306:3306"
+      - "3309:3306"
 
     
 # COMANDOS PARA LEVANTARLO
