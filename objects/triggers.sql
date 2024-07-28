@@ -54,3 +54,26 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+-- Trigger para verificar si el correos electrónico de un cliente es único al instertar un nuevo empleado
+
+DELIMITER //
+
+CREATE TRIGGER trg_before_insert_empleado
+BEFORE INSERT ON Empleado
+FOR EACH ROW 
+BEGIN 
+	DECLARE email_count INT;
+	
+	SELECT COUNT(1) INTO email_count
+		FROM Empleado  
+	WHERE Email = NEW.Email;
+
+	IF email_count > 0 THEN
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El email indicado corresponde a un empleado.';
+	END IF;
+END //
+
+
+DELIMITER ;
