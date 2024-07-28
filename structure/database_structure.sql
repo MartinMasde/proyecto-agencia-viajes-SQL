@@ -95,7 +95,7 @@ CREATE TABLE Tour_Paquete (
 		idTourPaquete INT AUTO_INCREMENT,
 		Nombre VARCHAR(100),
 		Descripcion VARCHAR(250),
-		RechaReserva DATETIME,
+		FechaReserva DATETIME,
 		Precio DECIMAL(10,2),
 	PRIMARY KEY (idTourPaquete)
 );
