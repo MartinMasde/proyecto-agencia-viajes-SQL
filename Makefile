@@ -33,27 +33,27 @@ up:
 
 
 	@echo "Create the import and run de script"
-	docker exec -it $(SERVICE_NAME) mysql -u$(MYSQL_USER) -p$(PASSWORD)  -e "source $(DATABASE_CREATION);"
-	docker exec -it $(SERVICE_NAME) mysql -u$(MYSQL_USER) -p$(PASSWORD) --local-infile=1 -e "source $(DATABASE_POPULATION)"
+	docker exec -it $(SERVICE_NAME) mysql -u$(USER) -p$(PASSWORD)  -e "source $(DATABASE_CREATION);"
+	docker exec -it $(SERVICE_NAME) mysql -u$(USER) -p$(PASSWORD) --local-infile=1 -e "source $(DATABASE_POPULATION)"
 
 objects:
 	@echo "Create objects in database"
 	@for file in $(FILES); do \
 	    echo "Process $$file and add to the database: $(DATABASE_NAME)"; \
-	docker exec -it $(SERVICE_NAME)  mysql -u$(MYSQL_USER) -p$(PASSWORD) -e "source ./sql_project/database_objects/$$file.sql"; \
+	docker exec -it $(SERVICE_NAME)  mysql -u$(USER) -p$(PASSWORD) -e "source ./structure/database_objects/$$file.sql"; \
 	done
 
 test-db:
 	@echo "Testing the tables"
-	docker exec -it $(SERVICE_NAME)  mysql -u$(MYSQL_USER) -p$(PASSWORD)  -e "source ./sql_project/check_db_objects.sql";
+	docker exec -it $(SERVICE_NAME)  mysql -u$(USER) -p$(PASSWORD)  -e "source ./structure/check_db_objects.sql";
 
 access-db:
 	@echo "Access to db-client"
-	docker exec -it $(SERVICE_NAME) mysql -u$(MYSQL_USER) -p$(PASSWORD) 
+	docker exec -it $(SERVICE_NAME) mysql -u$(USER) -p$(PASSWORD) 
 
 
 down:
 	@echo "Remove the Database"
-	docker exec -it $(SERVICE_NAME) mysql -u$(MYSQL_USER) -p$(PASSWORD) --host $(HOST) --port $(PORT) -e "DROP DATABASE IF EXISTS $(DATABASE);"
+	docker exec -it $(SERVICE_NAME) mysql -u$(USER) -p$(PASSWORD) --host $(HOST) --port $(PORT) -e "DROP DATABASE IF EXISTS $(DATABASE);"
 	@echo "Bye"
 	docker compose -f $(DOCKER_COMPOSE_FILE) down

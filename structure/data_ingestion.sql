@@ -53,15 +53,6 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (Nombre, Direccion, Telefono, PrecioPorNoche);
 
--- Reserva 200 records
-LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva.csv'
-INTO TABLE Reserva  
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
-
 -- Viaje 150 records
 LOAD DATA LOCAL INFILE '/structure/data-csv/Viaje.csv'
 INTO TABLE Viaje  
@@ -70,6 +61,15 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (Destino, FechaSalida, FechaRegreso, Descripcion, Precio);
+
+-- Reserva 200 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva.csv'
+INTO TABLE Reserva  
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
 
 -- Vuelo 200 records
 LOAD DATA LOCAL INFILE '/structure/data-csv/Vuelo.csv'

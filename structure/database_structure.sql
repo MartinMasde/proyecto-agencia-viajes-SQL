@@ -109,7 +109,7 @@ CREATE TABLE Cliente_Tour_Paquete (
 );
 
 -- TABLA TOUR_PAQUETE_VIAJE
-CREATE TABLE Tour_Paquete_viaje (
+CREATE TABLE Tour_Paquete_Viaje (
 		idTourPaqueteViaje INT AUTO_INCREMENT,
 		idTourPaquete INT,
 		idViaje INT,

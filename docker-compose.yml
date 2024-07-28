@@ -8,7 +8,9 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       # - ./mysql:/var/lib/mysql
-      - ./sql_project:/sql_project
+      # - ./sql_project:/sql_project
+      # - ./structure:/docker-entrypoint-initdb.d
+      - ./structure:/structure
     ports:
       - "3309:3306"
 
