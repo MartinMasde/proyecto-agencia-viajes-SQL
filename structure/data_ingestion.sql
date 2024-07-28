@@ -26,24 +26,6 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (Nombre, Telefono, Email);
 
--- Reserva_Hotel 125 records
-LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva_Hotel.csv'
-INTO TABLE Reserva_Hotel  
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(idReserva, idHotel, FechaCheckIn, FechaCheckOut);
-
--- Reserva_Vuelo 100 records
-LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva_Vuelo.csv'
-INTO TABLE Reserva_Vuelo  
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(idReserva, idVuelo);
-
 -- Hotel 200 records
 LOAD DATA LOCAL INFILE '/structure/data-csv/Hotel.csv'
 INTO TABLE Hotel  
@@ -62,15 +44,6 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (Destino, FechaSalida, FechaRegreso, Descripcion, Precio);
 
--- Reserva 200 records
-LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva.csv'
-INTO TABLE Reserva  
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
-
 -- Vuelo 200 records
 LOAD DATA LOCAL INFILE '/structure/data-csv/Vuelo.csv'
 INTO TABLE Vuelo 
@@ -88,6 +61,33 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (Nombre, Descripcion, FechaReserva, Precio);
+
+-- Reserva 200 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva.csv'
+INTO TABLE Reserva  
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(FechaReserva, FechaViaje, idCliente, idViaje, idEmpleado);
+
+-- Reserva_Hotel 125 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva_Hotel.csv'
+INTO TABLE Reserva_Hotel  
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(idReserva, idHotel, FechaCheckIn, FechaCheckOut);
+
+-- Reserva_Vuelo 100 records
+LOAD DATA LOCAL INFILE '/structure/data-csv/Reserva_Vuelo.csv'
+INTO TABLE Reserva_Vuelo  
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(idReserva, idVuelo);
 
 -- Cliente_Tour_Paquete 50 records
 LOAD DATA LOCAL INFILE '/structure/data-csv/Cliente_Tour_Paquete.csv'

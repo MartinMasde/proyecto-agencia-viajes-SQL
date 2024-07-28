@@ -1,7 +1,7 @@
 USE agencia_viajes;
 
 DROP FUNCTION IF EXISTS reservas_empleado_periodo;
-DROP FUNCTION IF EXISTS 
+DROP FUNCTION IF EXISTS CalcularPrecioConDescuento;
 
 -- Funcion para contar las reservas de un empleado en un intervalo de tiempo:
 

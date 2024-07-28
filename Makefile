@@ -40,7 +40,7 @@ objects:
 	@echo "Create objects in database"
 	@for file in $(FILES); do \
 	    echo "Process $$file and add to the database: $(DATABASE_NAME)"; \
-	docker exec -it $(SERVICE_NAME)  mysql -u$(USER) -p$(PASSWORD) -e "source ./structure/database_objects/$$file.sql"; \
+	docker exec -it $(SERVICE_NAME)  mysql -u$(USER) -p$(PASSWORD) -e "source ./objects/$$file.sql"; \
 	done
 
 test-db:

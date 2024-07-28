@@ -12,7 +12,7 @@ CREATE TABLE Log_Auditoria (
     Usuario VARCHAR(100),
     FechaCambio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (idLog)
-);
+) COMMENT 'Tabla para registrar los cambios realizados en las tablas de la BD';
 
 -- Trigger para registrar cambios (UPDATE) en la tabla Reserva y respaldar los cambios en la tabla Log_Auditoria
 DELIMITER //
