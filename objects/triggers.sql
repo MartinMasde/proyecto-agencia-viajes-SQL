@@ -10,7 +10,7 @@ CREATE TABLE Log_Auditoria (
     ValorAnterior VARCHAR(255),
     ValorNuevo VARCHAR(255),
     Usuario VARCHAR(100),
-    FechaCambio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FechaActualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (idLog)
 ) COMMENT 'Tabla para registrar los cambios realizados en las tablas de la BD';
 
@@ -30,7 +30,7 @@ BEGIN
         SET colName = 'FechaReserva';
         SET oldValue = OLD.FechaReserva;
         SET newValue = NEW.FechaReserva;
-        INSERT INTO Log_Auditoria (NombreTabla, NombreColumna, ValorAnterior, ValorNuevo, Usuario, FechaCambio)
+        INSERT INTO Log_Auditoria (NombreTabla, NombreColumna, ValorAnterior, ValorNuevo, Usuario, FechaActualizacion)
         VALUES ('Reserva', colName, oldValue, newValue, CURRENT_USER(), NOW());
     END IF;
 
@@ -39,7 +39,7 @@ BEGIN
         SET colName = 'FechaViaje';
         SET oldValue = OLD.FechaViaje;
         SET newValue = NEW.FechaViaje;
-        INSERT INTO Log_Auditoria (NombreTabla, NombreColumna, ValorAnterior, ValorNuevo, Usuario, FechaCambio)
+        INSERT INTO Log_Auditoria (NombreTabla, NombreColumna, ValorAnterior, ValorNuevo, Usuario, FechaActualizacion)
         VALUES ('Reserva', colName, oldValue, newValue, CURRENT_USER(), NOW());
     END IF;
 
@@ -48,7 +48,7 @@ BEGIN
         SET colName = 'idViaje';
         SET oldValue = OLD.idViaje;
         SET newValue = NEW.idViaje;
-        INSERT INTO Log_Auditoria (NombreTabla, NombreColumna, ValorAnterior, ValorNuevo, Usuario, FechaCambio)
+        INSERT INTO Log_Auditoria (NombreTabla, NombreColumna, ValorAnterior, ValorNuevo, Usuario, FechaActualizacion)
         VALUES ('Reserva', colName, oldValue, newValue, CURRENT_USER(), NOW());
     END IF;
 END //

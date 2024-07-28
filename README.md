@@ -344,9 +344,19 @@ CALL sp_agregar_cliente ('Martin', 'Mas', 'Chucarro 1168', '777-777-7777', 'mart
 
 ## Documentación de Triggers
 
+### Trigger: trg_after_update_reserva
 
+**Descripción:** Este trigger registra las modificaciones (UPDATE) en las Reservas en la tabla Log_Auditoria.
 
+**Detalles:**
 
+* **Tabla afectada:** Reserva
+* **Acción:** UPDATE
+* **Información registrada:** NombreTabla, NombreColumna, ValorAnterior, ValorNuevo, Usuario, FechaActualizacion
 
+**Ejemplo:**
+
+* Se actualiza una reserva.
+* El trigger registra la acción en la tabla Log_Auditoria con los detalles correspondientes.
 
 
