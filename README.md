@@ -359,4 +359,40 @@ CALL sp_agregar_cliente ('Martin', 'Mas', 'Chucarro 1168', '777-777-7777', 'mart
 * Se actualiza una reserva.
 * El trigger registra la acción en la tabla Log_Auditoria con los detalles correspondientes.
 
+### Trigger: trg_before_insert_empleado
+
+**Descripción:** Este trigger al registrar un nuevo empleado verifica que su email no este repetido.
+
+**Detalles:**
+
+* **Tabla afectada:** Empleado
+* **Acción:** INSERT
+* **Validación:** Correo electrónico único
+
+**Ejemplo:**
+
+* Se intenta insertar un nuevo empleado con un email ya registrado.
+* El trigger genera un error y la inserción no se realiza.
+
+
+## Herramientas y tecnologias usadas
+* Makefile (para generar una interfaz sencilla de procesos)
+* Docker (para generar un container)
+* MySQL (Motor de bases de datos `version: latest`)
+* MySQL Workbench (Interfaz grafica)
+* Mockaroo (para otorgar datos ficticios)
+* Visual Studio Code (para editar el código)
+
+## Como levantar el proyecto en CodeSpaces GitHub
+* env: Archivo con contraseñas y data secretas
+* Makefile: Abstracción de creacción del proyecto
+* docker-compose.yml: Permite generar las bases de datos en forma de contenedores
+
+#### Pasos para arrancar el proyecto
+
+* En la terminal de linux escribir :
+    - `make` _si te da un error de que no conexion al socket, volver al correr el comando `make`_
+    - `make clean-db` limpiar la base de datos
+    - `make test-db` para mirar los datos de cada tabla
+    - `make access-db` para acceder a la base de datos
 

@@ -56,7 +56,7 @@ END //
 DELIMITER ;
 
 
--- Trigger para verificar si el correos electrónico de un cliente es único al instertar un nuevo empleado
+-- Trigger para verificar si el correos electrónico de un empleado es único al instertar un nuevo empleado
 
 DELIMITER //
 
@@ -74,6 +74,5 @@ BEGIN
 		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El email indicado corresponde a un empleado.';
 	END IF;
 END //
-
 
 DELIMITER ;
