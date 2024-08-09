@@ -9,6 +9,7 @@ services:
     volumes:
       - ./structure:/structure
       - ./objects:/objects
+      - ./backups:/backups
     ports:
       - "3309:3306"
 

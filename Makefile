@@ -13,7 +13,7 @@ DOCKER_COMPOSE_FILE=./docker-compose.yml
 DATABASE_CREATION=./structure/database_structure.sql
 DATABASE_POPULATION=./structure/data_ingestion.sql
 
-FILES=views functions store_procedures triggers
+FILES=views functions store_procedures triggers roles_users
 
 
 .PHONY: all up objects test-db access-db down
@@ -50,6 +50,13 @@ test-db:
 access-db:
 	@echo "Access to db-client"
 	docker exec -it $(SERVICE_NAME) mysql -u$(USER) -p$(PASSWORD) 
+
+
+backup-db:
+	@echo "Back up database by structure and data"
+	# Dump MySQL database to a file
+	# para que te permita descargar con procedimientos
+	docker exec -it $(SERVICE_NAME) mysqldump --routines=true  -u$(USER) -p$(PASSWORD) $(DATABASE) > ./backups/$(DATABASE)-backup.sql
 
 
 down:

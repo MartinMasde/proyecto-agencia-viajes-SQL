@@ -1,43 +1,37 @@
-USE mysql;
-
--- CREATE USER IF NOT EXISTS
-CREATE USER IF NOT EXISTS 'admin_super'@'%' IDENTIFIED BY 'password';
-
--- GRANT ALL PRIVILEGES ON coderhouse_generico.* TO 'admin_super'@'%'
-GRANT ALL PRIVILEGES ON agencia_viajes.* TO 'admin_super'@'%' WITH GRANT OPTION;
-
-FLUSH PRIVILEGES;
-
 USE agencia_viajes;
 
+DROP ROLE IF EXISTS administrador, encargado, empleado;
+
 -- CREACIÓN DE ROLES
-CREATE ROLE role_select_vistas;
-CREATE ROLE role_crud_reservas;
-CREATE ROLE role_creacion_usuarios;
+CREATE ROLE administrador;
+CREATE ROLE encargado;
+CREATE ROLE empleado;
 
--- ASIGNACIÓN DE PRIVILEGIOS AL ROL role_select_vistas
-GRANT SELECT ON Cliente TO role_select_vistas;
-GRANT SELECT ON Reserva TO role_select_vistas;
-GRANT SELECT ON Empleado TO role_select_vistas;
-GRANT SELECT ON Viaje TO role_select_vistas;
-GRANT SELECT ON Hotel TO role_select_vistas;
-GRANT SELECT ON Vuelo TO role_select_vistas;
-GRANT SELECT ON Tour_Paquete TO role_select_vistas;
+-- ASIGNACIÓN DE PRIVILEGIOS AL ROL administrador
+GRANT ALL ON agencia_viajes.* TO administrador;
 
--- ASIGNACIÓN DE PRIVILEGIOS AL ROL role_crud_reservas
-GRANT ALL PRIVILEGES ON Reserva TO role_crud_reservas;
-GRANT ALL PRIVILEGES ON Cliente TO role_crud_reservas;
-GRANT ALL PRIVILEGES ON Empleado TO role_crud_reservas;
-GRANT ALL PRIVILEGES ON Viaje TO role_crud_reservas;
+-- ASIGNACIÓN DE PRIVILEGIOS AL ROL encargado
+GRANT SELECT, INSERT, UPDATE, DELETE ON agencia_viajes.* TO encargado;
 
+-- ASIGNACIÓN DE PRIVILEGIOS AL ROL empleado
+GRANT SELECT, INSERT, UPDATE ON agencia_viajes.* TO empleado;
 
-
+-- ELIMINAR LOS USUARIOS SI EXISTEN
+DROP USER IF EXISTS 'admin'@'%', 'encargado1'@'%', 'empleado1'@'%', 'empleado2'@'%';
 
 -- CREACIÓN DE USUARIOS Y ASIGNACIÓN A ROLES
-CREATE USER 'usuario_vistas'@'%' IDENTIFIED BY 'password_vistas';
-GRANT role_select_vistas TO 'usuario_vistas'@'%';
+CREATE USER 'admin'@'%' IDENTIFIED BY 'password';
+GRANT administrador TO 'admin'@'%';
 
-CREATE USER 'usuario_crud'@'%' IDENTIFIED BY 'password_crud';
-GRANT role_crud_reservas TO 'usuario_crud'@'%';
+CREATE USER 'encargado1'@'%' IDENTIFIED BY 'password';
+GRANT encargado TO 'encargado1'@'%';
 
-FLUSH PRIVILEGES;
+CREATE USER 'empleado1'@'%' IDENTIFIED BY 'password';
+CREATE USER 'empleado2'@'%' IDENTIFIED BY 'password';
+
+GRANT empleado TO 'empleado1'@'%', 'empleado2'@'%';
+
+-- VERIFICACIÓN DE PRIVILEGIOS
+SHOW GRANTS FOR 'admin'@'%';
+SHOW GRANTS FOR 'encargado1'@'%';
+SHOW GRANTS FOR 'empleado1'@'%';
