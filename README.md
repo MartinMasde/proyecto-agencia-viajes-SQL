@@ -374,6 +374,23 @@ CALL sp_agregar_cliente ('Martin', 'Mas', 'Chucarro 1168', '777-777-7777', 'mart
 * Se intenta insertar un nuevo empleado con un email ya registrado.
 * El trigger genera un error y la inserción no se realiza.
 
+## Roles y Permisos
+`./objects/roles_users.sql`
+
+Se general tres roles:
+
+1. `administrador`: Este rol tiene todos los permisos en la base de datos.
+2. `encargado`: Este rol tiene permisos para generar CRUD en todas las tablas.
+2. `empleado`: Este rol tiene permisos para SELECT, INSERT y UPDATE en las tablas.
+
+Se crea un usuario con el rol administrador.
+Se crea un usuario con el rol encargado.
+Se crean dos usuarios con el rol empleado.
+
+
+## Back up de la base de datos
+
+Se puede ejecutar un backup de manera manual con el comando `make backup`, y se almacenara en la carpeta back-up. 
 
 ## Herramientas y tecnologias usadas
 * Makefile (para generar una interfaz sencilla de procesos)
@@ -394,5 +411,6 @@ CALL sp_agregar_cliente ('Martin', 'Mas', 'Chucarro 1168', '777-777-7777', 'mart
     - `make` _si te da un error de que no conexion al socket, volver al correr el comando `make`_
     - `make clean-db` limpiar la base de datos
     - `make test-db` para mirar los datos de cada tabla
+    - `make backup-db` para realizar un backup de mi base de datos
     - `make access-db` para acceder a la base de datos
 
