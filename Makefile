@@ -12,6 +12,7 @@ USER=${MYSQL_USER}
 DOCKER_COMPOSE_FILE=./docker-compose.yml
 DATABASE_CREATION=./structure/database_structure.sql
 DATABASE_POPULATION=./structure/data_ingestion.sql
+CURDATE= now();
 
 FILES=views functions store_procedures triggers roles_users
 
@@ -51,13 +52,15 @@ access-db:
 	@echo "Access to db-client"
 	docker exec -it $(SERVICE_NAME) mysql -u$(USER) -p$(PASSWORD) 
 
+access-db-encargado1:
+	@echo "Access to db-client"
+	docker exec -it $(SERVICE_NAME) mysql -u encargado1 -ppassword 
 
 backup-db:
 	@echo "Back up database by structure and data"
 	# Dump MySQL database to a file
 	# para que te permita descargar con procedimientos
-	docker exec -it $(SERVICE_NAME) mysqldump --routines=true  -u$(USER) -p$(PASSWORD) $(DATABASE) > ./backups/$(DATABASE)-backup.sql
-
+	docker exec -it $(SERVICE_NAME) mysqldump --routines=true  -u root -p$(PASSWORD) $(DATABASE) > ./back-up/$(DATABASE)-$(shell date +%Y%m%d%H%M%S).sql
 
 down:
 	@echo "Remove the Database"

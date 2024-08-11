@@ -28,8 +28,13 @@ GRANT encargado TO 'encargado1'@'%';
 
 CREATE USER 'empleado1'@'%' IDENTIFIED BY 'password';
 CREATE USER 'empleado2'@'%' IDENTIFIED BY 'password';
-
 GRANT empleado TO 'empleado1'@'%', 'empleado2'@'%';
+
+-- SETEAR PRIVILEGIOS
+SET DEFAULT ROLE administrador TO 'admin'@'%';
+SET DEFAULT ROLE encargado TO 'encargado1'@'%';
+SET DEFAULT ROLE empleado TO 'empleado1'@'%', 'empleado2'@'%';
+
 
 -- VERIFICACIÓN DE PRIVILEGIOS
 SHOW GRANTS FOR 'admin'@'%';
