@@ -3,6 +3,8 @@ USE agencia_viajes;
 DROP PROCEDURE IF EXISTS sp_nueva_reserva;
 DROP PROCEDURE IF EXISTS sp_agregar_cliente;
 
+-- Procedimiento almacenado para agregar una nueva reserva a la base de datos
+
 DELIMITER //
 
 CREATE PROCEDURE sp_nueva_reserva(
@@ -43,6 +45,7 @@ END //
 DELIMITER ;
 
 
+-- Procedimiento almacenado para agregar un nuevo cliente a la base de datos
 
 DELIMITER //
 
@@ -74,3 +77,43 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- Procedimiento almacenado para eliminar un cliente de la base de datos si no tiene reservas asociadas
+
+DELIMITER //
+
+CREATE PROCEDURE sp_eliminar_cliente (
+	IN p_idCliente INT
+)
+
+BEGIN
+	START TRANSACTION;
+
+	DECLARE existeReserva INT;
+
+	-- Verifico si el cliente tiene reservas asociadas
+	SELECT COUNT(*) INTO existeReserva
+	FROM Reserva
+	WHERE idCliente = p_idCliente;
+
+	IF existeReserva = 0 THEN
+		-- Si no tiene reservas asociadas, elimino el cliente
+		DELETE FROM Cliente
+		WHERE idCliente = p_idCliente;
+		SELECT 'Cliente eliminado exitosamente';
+	ELSE
+		-- Si tiene reservas asociadas, devuelvo un mensaje de error
+		SELECT 'El cliente tiene reservas asociadas, no se puede eliminar';
+	END IF;
+
+	IF @@ERROR_COUNT > 0 THEN
+		ROLLBACK;
+		SELECT 'Error al eliminar el cliente';
+	ELSE
+		COMMIT;
+	END IF;
+END //
+
+DELIMITER ;
+	
+	
