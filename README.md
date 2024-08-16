@@ -244,6 +244,38 @@ SELECT * FROM CantidadReservasPorEmpleado
 ORDER BY TotalReservas DESC;
 ```
 
+### Vista: ClientesConMenosReservas
+
+**Descripción:** Esta vista muestra los 10 clientes con menos reservas realizadas.
+
+**Columnas:**
+
+* **idCliente:** El id del cliente
+* **Nombre:** El nombre del cliente
+* **Apellido:** El apellido del cliente
+* **TotalReservas:** El total de las reservas realizadas
+
+**Ejemplo de consulta:**
+
+```sql
+SELECT * FROM ClientesConMenosReservas;
+```
+### Vista: ClientesConMasReservas
+
+**Descripción:** Esta vista muestra los 10 clientes con mas reservas realizadas.
+
+**Columnas:**
+
+* **idCliente:** El id del cliente
+* **Nombre:** El nombre del cliente
+* **Apellido:** El apellido del cliente
+* **TotalReservas:** El total de las reservas realizadas
+
+**Ejemplo de consulta:**
+
+```sql
+SELECT * FROM ClientesConMasReservas;
+```
 
 ## Documentación de Funciones
 
@@ -341,6 +373,23 @@ CALL sp_nueva_reserva('2024-08-01', 30, 2, 4);
 CALL sp_agregar_cliente ('Martin', 'Mas', 'Chucarro 1168', '777-777-7777', 'martin@email.com', 'Persona');
 ```
 
+### Procedimiento: sp_eliminar_cliente
+
+**Descripción:** Este procedimiento elimina un cliente de la base de datos mientras dicho cliente no tenga reservas asociadas.
+
+**Parámetros:**
+
+* **p_idCliente:** El identificador del cliente a eliminar
+
+**Retorno:**
+
+* Un mensaje de exito al eliminarlo, un mensaje indicando que el cliente tiene reservas asociadas y no se puede eliminar o un mensaje de error.
+
+**Ejemplo de uso:**
+
+```sql
+CALL sp_eliminar_cliente (19);
+```
 
 ## Documentación de Triggers
 
@@ -386,7 +435,6 @@ Se general tres roles:
 Se crea un usuario con el rol administrador.
 Se crea un usuario con el rol encargado.
 Se crean dos usuarios con el rol empleado.
-
 
 ## Back up de la base de datos
 

@@ -55,7 +55,8 @@ GROUP BY
 	E.Nombre, 
 	E.Email;
 
--- Vista para mostrar los 10 clientes con menos reservas hechas
+-- Vista Clientes con Menos Reservas
+-- Esta vista mostrara los 10 clientes con menos reservas hechas
 
 CREATE VIEW 
 	ClientesConMenosReservas AS
@@ -75,7 +76,8 @@ ORDER BY
 	TotalReservas ASC
 LIMIT 10;
 
--- Vista para mostrar los 10 clientes con mas reservas hechas y el detalle de las mismas ordenadas por fecha de reserva de manera ascendente
+-- Vista Clientes con Mas Reservas
+-- Esta vista mostrara los 10 clientes con mas reservas hechas
 
 CREATE VIEW 
 	ClientesConMasReservas AS
