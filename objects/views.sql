@@ -68,6 +68,7 @@ FROM
 	Cliente C
 	LEFT JOIN Reserva R ON C.idCliente = R.idCliente
 GROUP BY
+	C.idCliente,
 	C.Nombre,
 	C.Apellido
 ORDER BY
@@ -87,6 +88,7 @@ FROM
 	Cliente C
 	LEFT JOIN Reserva R ON C.idCliente = R.idCliente
 GROUP BY
+	C.idCliente,
 	C.Nombre,
 	C.Apellido
 ORDER BY
