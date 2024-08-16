@@ -54,3 +54,40 @@ FROM
 GROUP BY 
 	E.Nombre, 
 	E.Email;
+
+-- Vista para mostrar los 10 clientes con menos reservas hechas
+
+CREATE VIEW 
+	ClientesConMenosReservas AS
+SELECT
+	C.Nombre,
+	C.Apellido,
+	COUNT(R.idReserva) AS TotalReservas
+FROM
+	Cliente C
+	LEFT JOIN Reserva R ON C.idCliente = R.idCliente
+GROUP BY
+	C.Nombre,
+	C.Apellido
+ORDER BY
+	TotalReservas ASC
+LIMIT 10;
+
+-- Vista para mostrar los 10 clientes con mas reservas hechas y el detalle de las mismas ordenadas por fecha de reserva de manera ascendente
+
+CREATE VIEW 
+	ClientesConMasReservas AS
+SELECT
+	C.Nombre,
+	C.Apellido,
+	COUNT(R.idReserva) AS TotalReservas
+FROM
+	Cliente C
+	LEFT JOIN Reserva R ON C.idCliente = R.idCliente
+GROUP BY
+	C.Nombre,
+	C.Apellido
+ORDER BY
+	TotalReservas DESC
+LIMIT 10;
+
