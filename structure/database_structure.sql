@@ -133,8 +133,7 @@ ALTER TABLE Reserva_Vuelo  ADD CONSTRAINT fk_reserva_vuelo_reserva FOREIGN KEY (
 ALTER TABLE Reserva_Vuelo  ADD CONSTRAINT fk_reserva_vuelo_vuelo FOREIGN KEY (idVuelo) REFERENCES Vuelo (idVuelo);
 
 -- CLIENTE TOUR PAQUETE
-ALTER TABLE Cliente_Tour_Paquete
-DROP FOREIGN KEY fk_Cliente_Tour_Paquete_Cliente;
+
 ALTER TABLE Cliente_Tour_Paquete ADD CONSTRAINT fk_Cliente_Tour_Paquete_Tour_Paquete FOREIGN KEY (idTourPaquete) REFERENCES Tour_Paquete (idTourPaquete);
 ALTER TABLE Cliente_Tour_Paquete ADD CONSTRAINT fk_Cliente_Tour_Paquete_Cliente FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON DELETE CASCADE;
 
