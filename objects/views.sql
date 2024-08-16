@@ -60,6 +60,7 @@ GROUP BY
 CREATE VIEW 
 	ClientesConMenosReservas AS
 SELECT
+	C.idCliente,
 	C.Nombre,
 	C.Apellido,
 	COUNT(R.idReserva) AS TotalReservas
@@ -78,6 +79,7 @@ LIMIT 10;
 CREATE VIEW 
 	ClientesConMasReservas AS
 SELECT
+	C.idCliente,
 	C.Nombre,
 	C.Apellido,
 	COUNT(R.idReserva) AS TotalReservas
