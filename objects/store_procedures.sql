@@ -85,11 +85,9 @@ DELIMITER //
 CREATE PROCEDURE sp_eliminar_cliente (
 	IN p_idCliente INT
 )
-
 BEGIN
-	START TRANSACTION;
-
 	DECLARE existeReserva INT;
+	DECLARE error_mensaje VARCHAR(255) DEFAULT '';
 
 	-- Verifico si el cliente tiene reservas asociadas
 	SELECT COUNT(*) INTO existeReserva
@@ -97,23 +95,27 @@ BEGIN
 	WHERE idCliente = p_idCliente;
 
 	IF existeReserva = 0 THEN
-		-- Si no tiene reservas asociadas, elimino el cliente
+		-- Inicio la transacción
+		START TRANSACTION;
+		
+		-- Intento eliminar el cliente
 		DELETE FROM Cliente
 		WHERE idCliente = p_idCliente;
-		SELECT 'Cliente eliminado exitosamente';
+
+		-- Manejo los posibles errores 
+		IF ROW_COUNT() = 0 THEN
+			SET error_mensaje = 'Error al eliminar el cliente o el cliente no existe';
+			ROLLBACK;
+			SELECT error_mensaje AS mensaje;
+		ELSE
+			COMMIT;
+			SELECT 'Cliente eliminado exitosamente' AS mensaje;
+		END IF;
 	ELSE
 		-- Si tiene reservas asociadas, devuelvo un mensaje de error
-		SELECT 'El cliente tiene reservas asociadas, no se puede eliminar';
-	END IF;
-
-	IF @@ERROR_COUNT > 0 THEN
-		ROLLBACK;
-		SELECT 'Error al eliminar el cliente';
-	ELSE
-		COMMIT;
+		SELECT 'El cliente tiene reservas asociadas, no se puede eliminar' AS mensaje;
 	END IF;
 END //
 
 DELIMITER ;
-	
 	
