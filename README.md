@@ -1,7 +1,7 @@
 ![agenciaimagen](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/e28e1bcc-9a59-4068-a63e-7fc5618a5949)
 
 
-# <center>Segunda Entrega </center>
+# <center>Proyecto Final </center>
 
 @Alumno: Martin Mas de Ayala
 
@@ -438,7 +438,7 @@ Se crean dos usuarios con el rol empleado.
 
 ## Back up de la base de datos
 
-Se puede ejecutar un backup de manera manual con el comando `make backup`, y se almacenara en la carpeta back-up. 
+Se puede ejecutar un backup de manera manual con el comando `make backup-db`, y se almacenara en la carpeta back-up. 
 
 ## Herramientas y tecnologias usadas
 * Makefile (para generar una interfaz sencilla de procesos)
