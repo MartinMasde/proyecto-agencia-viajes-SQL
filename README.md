@@ -62,10 +62,6 @@ Diseñar e implementar una base de datos relacional que satisfaga todas las nece
 1.11 Tabla Tour_Paquete_Viaje
 
 
-
-
-
-
 ## 1.1 Tabla Cliente
 
 La tabla Cliente muestra información de todos los clientes.
@@ -179,7 +175,7 @@ La tabla Tour_Paquete_Viaje es una tabla intermedia entre Viaje y Tour_Paquete
 
 ## Estructura e ingesta de datos
 * Se realiza principalmente por medio del archivo data_ingestion.sql
-* Las carga de las tablas: Reserva, Viaje, Hotel, Vuelo, Tour_Paquete, Cliente_Tour_Paquete y Tour_Paquete_Viaje se realizan por medio de sus archivos .csv respectivos, dichos archivos se encuentran en el directorio ./structure/data-csv
+* Las carga de las tablas: Cliente, Cliente_Tour_Paquete, Empleado, Hotel, Reserva, Reserva_Hotel, Reserva_Vuelo, Tour_Paquete, Tour_Paquete_Viaje, Viaje y Vuelo se realizan por medio de sus archivos .csv respectivos, dichos archivos se encuentran en el directorio ./structure/data-csv
 
 ## Objetos de la base de datos
 
@@ -326,7 +322,6 @@ WHERE
     H.idHotel = 5;
 ```
 
-
 ## Documentación de Procedimientos Almacenados
 
 ### Procedimiento: sp_nueva_reserva
@@ -450,7 +445,7 @@ Se puede ejecutar un backup de manera manual con el comando `make backup-db`, y 
 
 ## Como levantar el proyecto en CodeSpaces GitHub
 * env: Archivo con contraseñas y data secretas
-* Makefile: Abstracción de creacción del proyecto
+* Makefile: Abstracción de creación del proyecto
 * docker-compose.yml: Permite generar las bases de datos en forma de contenedores
 
 #### Pasos para arrancar el proyecto
