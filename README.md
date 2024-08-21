@@ -370,7 +370,7 @@ CALL sp_agregar_cliente ('Martin', 'Mas', 'Chucarro 1168', '777-777-7777', 'mart
 
 ### Procedimiento: sp_eliminar_cliente
 
-**Descripción:** Este procedimiento elimina un cliente de la base de datos mientras dicho cliente no tenga reservas asociadas.
+**Descripción:** Procedimiento utilizando TCL (Transactional Control Language), este procedimiento elimina un cliente de la base de datos mientras dicho cliente no tenga reservas asociadas.
 
 **Parámetros:**
 
@@ -428,7 +428,9 @@ Se general tres roles:
 2. `empleado`: Este rol tiene permisos para SELECT, INSERT y UPDATE en las tablas.
 
 Se crea un usuario con el rol administrador.
+
 Se crea un usuario con el rol encargado.
+
 Se crean dos usuarios con el rol empleado.
 
 ## Back up de la base de datos
