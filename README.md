@@ -1,17 +1,6 @@
 ![agenciaimagen](https://github.com/MartinMasde/proyecto-agencia-viajes-masdeayala/assets/132627081/e28e1bcc-9a59-4068-a63e-7fc5618a5949)
 
 
-# <center>Proyecto Final </center>
-
-@Alumno: Martin Mas de Ayala
-
-@Comision: #57190
-
-@Tutor: Ariel Annone
-
-@Docente: Anderson Michel Torres
-
-
 # Agencia de Viajes Mayorista ✈
  <br> 
  
